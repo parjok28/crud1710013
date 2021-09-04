@@ -19,7 +19,7 @@ class App extends Component {
             name="Datamahasiswa"
             component={Datamahasiswa}
             options={{
-              headerShown: false,
+              headerShown: true,
             }}
           />
           <Stack.Screen
