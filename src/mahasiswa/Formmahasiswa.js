@@ -21,7 +21,7 @@ class Formmahasiswa extends Component {
     };
   }
   saveDataMhs = () => {
-    fetch('http://192.168.43.207/api-server/public/mahasiswa', {
+    fetch('http://192.168.42.163/api-server/public/mahasiswa', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -34,7 +34,7 @@ class Formmahasiswa extends Component {
         mhstelp: this.state.telp,
       }),
     })
-      .then(respone => respone.json())
+      .then(response => response.json())
       .then(json => {
         json.status == 201
           ? Alert.alert('Sukses', 'data mahasiswa berhasil disimpan')

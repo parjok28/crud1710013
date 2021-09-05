@@ -22,8 +22,8 @@ class Datamahasiswa extends Component {
   }
 
   getDataMhs = () => {
-    fetch('http://192.168.43.207/api-server/public/mahasiswa')
-      .then(respone => respone.json())
+    fetch('http://192.168.42.163/api-server/public/mahasiswa')
+      .then(response => response.json())
       .then(json => this.setState({dataMhs: json}))
       .catch(err => console.log(err));
   };
@@ -85,11 +85,17 @@ class Datamahasiswa extends Component {
                   </Text>
                   <Text>{item.mhsnama}</Text>
                 </View>
-                <View style={{alignItems: 'center', justifyContent: 'center'}}>
+                <TouchableOpacity
+                  style={{alignItems: 'center', justifyContent: 'center'}}
+                  onPress={() =>
+                    this.props.navigation.navigate('Detailmahasiswa', {
+                      noBP: item.mhsnobp,
+                    })
+                  }>
                   <Text>
                     <Icon name="angle-double-right" size={20} color="#000" />
                   </Text>
-                </View>
+                </TouchableOpacity>
               </View>
             )}
           />
